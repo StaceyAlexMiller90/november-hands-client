@@ -1,0 +1,26 @@
+@import '../../pages/variables.scss';
+
+.header {
+  display: flex;
+  font-family: $family-serif;
+  font-style: normal;
+  font-size: 2rem;
+  width: 100%;
+  background-color: $white;
+  height: 5rem;
+  z-index: 20;
+  padding: 0rem 1rem;
+
+  &__logo {
+    width: 350px;
+    height: 40px;
+    justify-self: center;
+    align-self: center;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    font-family: $family-sans;
+    font-size: 14px;
+    font-weight: 600;
+  }
+}

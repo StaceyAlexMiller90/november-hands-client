@@ -1,0 +1,22 @@
+$gold: #d8944b;
+$white: #ffffff;
+$grey-darker: #292929;
+$grey-dark: #333333;
+$grey-mid: #474747;
+$beige-light: #f7f3ec;
+$beige-mid: #ede6e3;
+
+$family-sans: 'Open Sans', sans-serif;
+$family-sans-serif: 'Montserrat', sans-serif;
+$family-serif: 'Playfair Display', serif;
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translate(0, -1.5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}

@@ -1,0 +1,67 @@
+@import '../../pages/variables.scss';
+
+.hamburger {
+  margin-left: auto;
+  align-self: center;
+  font-size: 0;
+  width: 45px;
+  height: 40px;
+  appearance: none;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  outline: none;
+  z-index: 20;
+
+  &__line {
+    background: $gold;
+    margin-left: auto;
+    display: block;
+    height: 2px;
+    width: 30px;
+    position: relative;
+
+    // Adding top and bottom hamburger lines to menu, 8px above & below
+    &:before {
+      background: $gold;
+      content: '';
+      display: block;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      transition: all 0.2s ease-out;
+      top: 8px;
+    }
+
+    &:after {
+      background: $gold;
+      content: '';
+      display: block;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      transition: all 0.2s ease-out;
+      top: -8px;
+    }
+
+    // When menu opened hamburger becomes a cross
+    &_cross {
+      background: transparent;
+
+      &:before {
+        background: $gold;
+        transform: rotate(-45deg);
+        top: 0;
+      }
+
+      &:after {
+        background: $gold;
+        transform: rotate(45deg);
+        top: 0;
+      }
+    }
+  }
+  @media only screen and (min-width: 1024px) {
+    display: none;
+  }
+}

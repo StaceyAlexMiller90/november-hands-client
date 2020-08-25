@@ -65,15 +65,15 @@
       height: 2px;
       bottom: 0;
       left: 0;
-      background-color: $terracotta;
+      background-color: $grey-mid;
       visibility: hidden;
       transform: scaleX(0);
       transition: all 0.2s ease-in-out 0s;
     }
 
     &:hover {
-      color: $terracotta;
       @media only screen and (min-width: 1024px) {
+        color: $grey-mid;
         &::before {
           visibility: visible;
           transform: scaleX(1);
@@ -81,6 +81,7 @@
       }
     }
     @media only screen and (min-width: 1024px) {
+      color: $grey-mid;
       margin: 0 0 0 45px;
       line-height: 1;
     }
@@ -88,10 +89,9 @@
 
   // Link underline come into view on active (default class)
   .nav__link_active {
-    color: $terracotta;
-
     @media only screen and (min-width: 1024px) {
       &::before {
+        color: $grey-mid;
         visibility: visible;
         transform: scaleX(1);
       }

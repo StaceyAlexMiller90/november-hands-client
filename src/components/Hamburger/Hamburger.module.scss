@@ -14,7 +14,7 @@
   z-index: 20;
 
   &__line {
-    background: $gold;
+    background: $terracotta;
     margin-left: auto;
     display: block;
     height: 2px;
@@ -23,7 +23,7 @@
 
     // Adding top and bottom hamburger lines to menu, 8px above & below
     &:before {
-      background: $gold;
+      background: $terracotta;
       content: '';
       display: block;
       height: 100%;
@@ -34,7 +34,7 @@
     }
 
     &:after {
-      background: $gold;
+      background: $terracotta;
       content: '';
       display: block;
       height: 100%;
@@ -49,13 +49,13 @@
       background: transparent;
 
       &:before {
-        background: $gold;
+        background: $white;
         transform: rotate(-45deg);
         top: 0;
       }
 
       &:after {
-        background: $gold;
+        background: $white;
         transform: rotate(45deg);
         top: 0;
       }

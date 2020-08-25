@@ -1,0 +1,8 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+}
+
+.page {
+  min-height: calc(100vh - 10rem);
+}

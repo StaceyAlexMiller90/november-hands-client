@@ -23,7 +23,7 @@
       align-items: center;
       flex-direction: column;
       position: absolute;
-      background-color: $grey-dark;
+      background-color: $terracotta;
       min-height: 100vh;
       width: 100%;
       padding-top: 88px;
@@ -65,14 +65,14 @@
       height: 2px;
       bottom: 0;
       left: 0;
-      background-color: $gold;
+      background-color: $terracotta;
       visibility: hidden;
       transform: scaleX(0);
       transition: all 0.2s ease-in-out 0s;
     }
 
     &:hover {
-      color: $gold;
+      color: $terracotta;
       @media only screen and (min-width: 1024px) {
         &::before {
           visibility: visible;
@@ -88,7 +88,7 @@
 
   // Link underline come into view on active (default class)
   .nav__link_active {
-    color: $gold;
+    color: $terracotta;
 
     @media only screen and (min-width: 1024px) {
       &::before {

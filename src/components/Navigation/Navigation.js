@@ -12,7 +12,12 @@ const Navigation = (props) => {
       <ul className={`${styles.nav__menu} ${menuOpen && styles.nav__menu_open}`}>
         <li>
           <Link href="/">
-            <a className={`${styles.nav__link} ${router.pathname == '/' && styles.nav__link_active}`}>Home</a>
+            <a className={`${styles.nav__link} ${router.pathname === '/' && styles.nav__link_active}`}>Home</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/about">
+            <a className={`${styles.nav__link} ${router.pathname === '/about' && styles.nav__link_active}`}>About</a>
           </Link>
         </li>
       </ul>

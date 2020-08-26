@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
-import Navigation from '../Navigation/Navigation.js'
-import Hamburger from '../Hamburger/Hamburger.js'
+import Navigation from '../Navigation'
+import Hamburger from '../Hamburger'
 import styles from '../Header/Header.module.scss'
 
 const Header = () => {

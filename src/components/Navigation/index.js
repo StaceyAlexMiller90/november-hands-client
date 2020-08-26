@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { FiShoppingCart } from 'react-icons/fi'
 import styles from '../Navigation/Navigation.module.scss'
 
 const Navigation = (props) => {
@@ -31,6 +32,16 @@ const Navigation = (props) => {
         <li>
           <Link href="/profile">
             <a className={`${styles.nav__link} ${router.pathname === '/profile' && styles.nav__link_active}`}>Log In</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/cart">
+            <a className={`${styles.nav__link} ${router.pathname === '/cart' && styles.nav__link_active}`}>
+              <span className={styles.nav__link_cart}>
+                <FiShoppingCart />
+              </span>
+              (X)
+            </a>
           </Link>
         </li>
       </ul>

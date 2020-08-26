@@ -1,6 +1,6 @@
 import { wrapper } from '../../store/store'
 import Layout from '../layouts/AppLayout'
-import './styles.sass'
+import './globalstyles.sass'
 
 const WrappedApp = ({ Component, pageProps }) => {
   return (

@@ -2,12 +2,11 @@
 
 .header {
   display: flex;
-  font-family: $family-serif;
+  align-items: flex-end;
   font-style: normal;
-  font-size: 2rem;
   width: 100%;
   background-color: $white;
-  height: 5rem;
+  height: 4rem;
   z-index: 20;
   padding: 0rem 1rem;
 
@@ -25,7 +24,7 @@
   }
 
   @media only screen and (min-width: 1024px) {
-    font-family: $family-sans;
+    font-family: $primary-font;
     font-size: 14px;
     font-weight: 600;
   }

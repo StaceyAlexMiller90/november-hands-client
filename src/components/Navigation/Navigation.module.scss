@@ -1,20 +1,27 @@
 @import '../../pages/variables.scss';
 
 .nav {
+  flex: auto;
   height: inherit;
   display: flex;
-  margin-left: auto;
   align-items: center;
   transition: background-color 0.25s ease-in-out;
 
   &__menu {
     display: none;
 
+    &:first-child {
+      @media only screen and (min-width: 1024px) {
+        margin-left: 12vw;
+      }
+    }
+
     @media only screen and (min-width: 1024px) {
+      flex: auto;
+      align-self: flex-end;
       display: flex;
       flex-direction: row;
-      margin-left: auto;
-      justify-content: flex-end;
+      justify-content: center;
     }
 
     &_open {
@@ -36,16 +43,13 @@
       animation: slideIn 0.4s ease;
       // Need to add reverse animation when menu is closed
 
-      @media only screen and (min-width: 1024px) {
-        flex-direction: row;
-        justify-content: flex-end;
-        height: auto;
-        width: auto;
-        background-color: transparent;
-        position: relative;
-        overflow: hidden;
-        padding-top: 0;
-      }
+      // @media only screen and (min-width: 1024px) {
+      //   flex-direction: row;
+      //   background-color: transparent;
+      //   position: relative;
+      //   overflow: hidden;
+      //   padding-top: 0;
+      // }
     }
   }
 
@@ -54,22 +58,27 @@
     text-decoration: none;
     text-transform: uppercase;
     color: $white;
-    line-height: 35px;
+    line-height: 2rem;
     display: block;
-    padding: 14px 0;
+    padding: 10px 0;
+    font-size: 1rem;
 
     // Link underline comes into view on hover
-    &::before {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 2px;
-      bottom: 0;
-      left: 0;
-      background-color: $peach;
-      visibility: hidden;
-      transform: scaleX(0);
-      transition: all 0.2s ease-in-out 0s;
+    &_primary {
+      &::before {
+        @media only screen and (min-width: 1024px) {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 3px;
+          bottom: 0;
+          left: 0;
+          background-color: $terracotta;
+          visibility: hidden;
+          transform: scaleX(0);
+          transition: all 0.2s ease-in-out 0s;
+        }
+      }
     }
 
     &:hover {
@@ -83,14 +92,27 @@
     }
 
     &_cart {
-      padding: 0.5rem;
+      padding-right: 0.5rem;
+      box-sizing: inherit;
+    }
+
+    &_right {
+      @media only screen and (min-width: 1024px) {
+        margin-left: auto;
+      }
     }
 
     @media only screen and (min-width: 1024px) {
       color: $grey-mid;
-      margin: 0 0 0 45px;
+      margin: 0 1.5rem;
       line-height: 1;
       display: inline-block;
+    }
+
+    &_secondary {
+      @media only screen and (min-width: 1024px) {
+        margin: 0 0.7rem;
+      }
     }
   }
 

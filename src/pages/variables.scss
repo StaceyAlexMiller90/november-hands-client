@@ -1,16 +1,13 @@
-$gold: #d8944b;
 $white: #ffffff;
-$grey-darker: #292929;
-$grey-dark: #333333;
-$beige-mid: #ede6e3;
-
 $beige-light: #f9ede1;
 $peach: #fde1c9;
 $terracotta: #d58644;
 $terracotta-dark: #b95402;
 $grey-mid: #564d46;
 
-$family-sans: 'Open Sans', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
+$primary-font: 'PT Sans', sans-serif;
 $family-sans-serif: 'Montserrat', sans-serif;
 $family-serif: 'Playfair Display', serif;
 

@@ -1,4 +1,3 @@
-import React from 'react'
 import styles from '../Hamburger/Hamburger.module.scss'
 
 const Hamburger = (props) => {

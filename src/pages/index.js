@@ -7,7 +7,8 @@ const HomePage = () => {
       <Head>
         <title>November Hands</title>
       </Head>
-      <section className={styles.container}>
+      <h1 className={styles.heading}>Ceramics handmade in Hilversum</h1>
+      <section className={styles.imageContainer}>
         <img
           src="https://res.cloudinary.com/november-hands/image/upload/v1598454407/Inspiration/132797966_fxtlvv.jpg"
           className={styles.image}></img>

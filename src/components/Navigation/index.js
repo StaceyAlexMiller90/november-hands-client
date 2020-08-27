@@ -53,13 +53,13 @@ const Navigation = (props) => {
         <li>
           <Link href="/cart">
             <a
-              className={`${styles.nav__link} ${styles.nav__link_secondary} ${
+              className={`${styles.nav__link} ${styles.nav__link_secondary} ${styles.cart} ${
                 router.pathname === '/cart' && styles.nav__link_active
               }`}>
-              <span className={styles.nav__link_cart}>
-                <FiShoppingCart />
+              <span className={styles.cart__icon}>
+                <FiShoppingCart size={15} />
               </span>
-              (X)
+              X
             </a>
           </Link>
         </li>

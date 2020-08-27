@@ -59,7 +59,6 @@
     text-decoration: none;
     text-transform: uppercase;
     color: $white;
-    line-height: 2rem;
     display: block;
     padding: 1.25rem 0 0 0;
     font-size: 1rem;
@@ -92,11 +91,6 @@
       }
     }
 
-    &_cart {
-      padding-right: 0.5rem;
-      box-sizing: inherit;
-    }
-
     &_right {
       @media only screen and (min-width: 1024px) {
         margin-left: auto;
@@ -126,5 +120,11 @@
         transform: scaleX(1);
       }
     }
+  }
+
+  .cart {
+    display: flex;
+    justify-content: space-around;
+    width: 2.5rem;
   }
 }

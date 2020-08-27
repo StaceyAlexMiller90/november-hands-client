@@ -8,9 +8,9 @@ const Hamburger = (props) => {
   }
 
   return (
-    <button onClick={executeOnClick} className={styles.hamburger}>
+    <div onClick={executeOnClick} className={styles.hamburger}>
       <span className={`${styles.hamburger__line} ${menuOpen && styles.hamburger__line_cross}`}></span>
-    </button>
+    </div>
   )
 }
 

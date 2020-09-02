@@ -1,5 +1,10 @@
-const initialState = {}
+const initialState = []
 
 export default (state = initialState, action) => {
-	return state
+  switch (action.type) {
+    case 'PRODUCTS_FETCHED_SUCCESS':
+      return action.payload
+    default:
+      return state
+  }
 }

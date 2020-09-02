@@ -1,0 +1,23 @@
+$white: #ffffff;
+$beige-light: #f9ede1;
+$peach: #fde1c9;
+$terracotta: #d58644;
+$terracotta-dark: #b95402;
+$grey-mid: #564d46;
+
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
+$primary-font: 'PT Sans', sans-serif;
+$family-sans-serif: 'Montserrat', sans-serif;
+$family-serif: 'Playfair Display', serif;
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translate(0, -1.5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}

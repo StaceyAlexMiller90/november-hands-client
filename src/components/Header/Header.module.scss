@@ -1,0 +1,32 @@
+@import '../../pages/variables.scss';
+
+.header {
+  position: fixed;
+  display: flex;
+  align-items: flex-end;
+  font-style: normal;
+  width: 100%;
+  background-color: $white;
+  height: 5rem;
+  z-index: 20;
+  padding: 0rem 1rem;
+  padding-bottom: 1rem;
+
+  &__logo {
+    width: 300px;
+    height: 35px;
+    align-self: flex-end;
+
+    @media only screen and (min-width: 1024px) {
+      width: 350px;
+      height: 40px;
+      cursor: pointer;
+    }
+  }
+
+  @media only screen and (min-width: 1024px) {
+    font-family: $primary-font;
+    font-size: 14px;
+    font-weight: 600;
+  }
+}

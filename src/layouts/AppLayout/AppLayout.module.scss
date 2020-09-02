@@ -1,0 +1,9 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+}
+
+.page {
+  min-height: calc(100vh - 5rem);
+  padding: 5rem 1rem 1rem 1rem;
+}

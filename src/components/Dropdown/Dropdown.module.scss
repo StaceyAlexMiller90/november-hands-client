@@ -1,0 +1,43 @@
+@import '../../pages/variables.scss';
+
+.dropdown {
+  margin-top: 1rem;
+  background-color: $white;
+  text-align: center;
+  width: 10rem;
+  animation: slideIn 1s ease;
+  z-index: -1;
+
+  &__menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    font-size: 0.8rem;
+    padding: 0.5rem 0;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $terracotta;
+    padding: none;
+    font-size: 1rem;
+
+    &:hover {
+      color: $grey-mid;
+    }
+  }
+  @media only screen and (min-width: 1024px) {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    padding-top: 3rem;
+    background-color: $white;
+  }
+}

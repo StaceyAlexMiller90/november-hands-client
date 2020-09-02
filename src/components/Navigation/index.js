@@ -1,4 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { fetchDropdownOptions } from '../../../store/dropdown/actions'
+import { selectDropdownOptions } from '../../../store/dropdown/selector'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { FiShoppingCart } from 'react-icons/fi'
@@ -6,6 +9,8 @@ import Dropdown from '../Dropdown'
 import styles from '../Navigation/Navigation.module.scss'
 
 const Navigation = ({ menuOpen, toggleMenu }) => {
+  const dispatch = useDispatch()
+  const { categories, collections } = useSelector(selectDropdownOptions)
   const router = useRouter()
   const [collectionSubMenu, setCollectionSubMenu] = useState(false)
   const [productSubMenu, setProductSubMenu] = useState(false)
@@ -13,6 +18,10 @@ const Navigation = ({ menuOpen, toggleMenu }) => {
   const executeToggle = () => {
     toggleMenu()
   }
+
+  useEffect(() => {
+    dispatch(fetchDropdownOptions())
+  }, [])
 
   return (
     <nav className={styles.nav}>
@@ -22,28 +31,14 @@ const Navigation = ({ menuOpen, toggleMenu }) => {
           onMouseOver={() => setCollectionSubMenu(true)}
           onMouseLeave={() => setCollectionSubMenu(false)}>
           Collections
-          {collectionSubMenu && (
-            <Dropdown
-              options={[
-                { id: 1, name: 'one' },
-                { id: 2, name: 'two' }
-              ]}
-            />
-          )}
+          {collectionSubMenu && <Dropdown name={'collections'} dataTable={'collection'} options={collections} />}
         </li>
         <li
           className={`${styles.nav__link} ${styles.nav__link_primary} ${productSubMenu && styles.nav__link_active}`}
           onMouseOver={() => setProductSubMenu(true)}
           onMouseLeave={() => setProductSubMenu(false)}>
           Products
-          {productSubMenu && (
-            <Dropdown
-              options={[
-                { id: 1, name: 'one' },
-                { id: 2, name: 'two' }
-              ]}
-            />
-          )}
+          {productSubMenu && <Dropdown name={'products'} dataTable={'category'} options={categories} />}
         </li>
         <li onClick={executeToggle}>
           <Link href="/about">

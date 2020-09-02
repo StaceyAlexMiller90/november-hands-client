@@ -20,6 +20,10 @@
     margin: 0;
     background-color: $terracotta;
 
+    &:last-child {
+      padding-bottom: 1rem;
+    }
+
     &:hover .dropdown__link {
       @media only screen and (min-width: 1024px) {
         color: $terracotta;
@@ -35,7 +39,7 @@
     text-decoration: none;
     color: $white;
     font-size: 1rem;
-    text-transform: lowercase;
+    text-transform: capitalize;
 
     @media only screen and (min-width: 1024px) {
       color: $grey-mid;

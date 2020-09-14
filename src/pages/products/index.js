@@ -11,6 +11,7 @@ const Products = () => {
   const products = useSelector(selectAllProducts)
   const [limit, setLimit] = useState(25)
   const [offset, setOffset] = useState(0)
+  const router = useRouter()
 
   useEffect(() => {
     if (products.length === 0) {
@@ -21,9 +22,9 @@ const Products = () => {
   return (
     <div>
       <Head>
-        <title>Shop by Product</title>
+        <title>Shop by Category</title>
       </Head>
-      <h1>Products Hannah Hello</h1>
+      <h1>All Products</h1>
       <ul>{products && products.map((prod, i) => <li key={i}>{prod.name}</li>)}</ul>
     </div>
   )

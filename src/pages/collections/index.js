@@ -6,7 +6,7 @@ const Collections = () => {
       <Head>
         <title>Shop by Collection</title>
       </Head>
-      <h1>Collections Hannah</h1>
+      <h1>Collections Summary</h1>
     </div>
   )
 }

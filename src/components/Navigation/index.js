@@ -40,7 +40,7 @@ const Navigation = ({ menuOpen, toggleMenu }) => {
           Products
           {productSubMenu && <Dropdown name={'products'} dataTable={'category'} options={categories} />}
         </li>
-        <li onClick={executeToggle}>
+        <li onTouchStart={executeToggle}>
           <Link href="/about">
             <a
               className={`${styles.nav__link} ${styles.nav__link_primary} ${
@@ -50,7 +50,7 @@ const Navigation = ({ menuOpen, toggleMenu }) => {
             </a>
           </Link>
         </li>
-        <li onClick={executeToggle} className={styles.nav__link_right}>
+        <li onTouchStart={executeToggle} className={styles.nav__link_right}>
           <Link href="/profile">
             <a
               className={`${styles.nav__link} ${styles.nav__link_secondary} ${
@@ -60,7 +60,7 @@ const Navigation = ({ menuOpen, toggleMenu }) => {
             </a>
           </Link>
         </li>
-        <li onClick={executeToggle}>
+        <li onTouchStart={executeToggle}>
           <Link href="/cart">
             <a
               className={`${styles.nav__link} ${styles.nav__link_secondary} ${styles.cart} ${

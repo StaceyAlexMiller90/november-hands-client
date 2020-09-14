@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchProducts } from '../../../store/products/actions'
+import { fetchAllProducts } from '../../../store/products/actions'
 import { selectAllProducts } from '../../../store/products/selector'
+
+import ProductCard from '../../components/ProductCard'
 
 const Products = () => {
   const dispatch = useDispatch()
@@ -15,7 +17,7 @@ const Products = () => {
 
   useEffect(() => {
     if (products.length === 0) {
-      dispatch(fetchProducts(limit, offset))
+      dispatch(fetchAllProducts(limit, offset))
     }
   }, [])
 
@@ -25,7 +27,7 @@ const Products = () => {
         <title>Shop by Category</title>
       </Head>
       <h1>All Products</h1>
-      <ul>{products && products.map((prod, i) => <li key={i}>{prod.name}</li>)}</ul>
+      <ProductCard products={products} />
     </div>
   )
 }

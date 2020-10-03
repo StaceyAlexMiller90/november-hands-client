@@ -7,6 +7,8 @@ import { selectAllProducts } from '../../../store/products/selector'
 
 import ProductCard from '../../components/ProductCard'
 
+import styles from './ProductPage.module.scss'
+
 const Products = () => {
   const dispatch = useDispatch()
   const group = useRouter().query.group
@@ -27,7 +29,11 @@ const Products = () => {
         <title>Shop by Category</title>
       </Head>
       <h1>All Products</h1>
-      <ProductCard products={products} />
+      <section className={styles.container}>
+        {products.map((product, i) => {
+          return <ProductCard key={`${product.id} ${i}`} product={product} />
+        })}
+      </section>
     </div>
   )
 }

@@ -17,7 +17,6 @@ export const fetchAllProducts = (limit, offset) => {
           offset
         }
       })
-      console.log('hello')
       dispatch(allProductsFetched(response.data.products))
     } catch (e) {
       console.log(e.message)

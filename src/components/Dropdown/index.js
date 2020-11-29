@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import styles from '../Dropdown/Dropdown.module.scss'
+import styles from './Dropdown.module.scss'
 
 const Dropdown = ({ options, name, dataTable }) => {
   return (

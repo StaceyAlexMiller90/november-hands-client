@@ -14,7 +14,7 @@ const Dropdown = ({ options, name, dataTable }) => {
         {options.map((opt, i) => {
           return (
             <li key={i} className={styles.dropdown__item} aria-label={opt}>
-              <Link href={`/products/[type]/[id]`} as={`/products/${dataTable}/${opt.id}`}>
+              <Link href={`/products/[type]/[id]/[name]`} as={`/products/${dataTable}/${opt.id}/${opt.name}`}>
                 <a className={styles.dropdown__link}>{opt.name}</a>
               </Link>
             </li>

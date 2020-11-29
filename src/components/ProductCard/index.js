@@ -6,7 +6,7 @@ const ProductCard = ({ product }) => {
   const { productColorId, productName, price, color, images, discount, discountedPrice } = product
 
   return (
-    <Link href={`/products/[id]`} as={`/products/${productColorId}`}>
+    <Link href={`/productDetail/[id]/[name]`} as={`/productDetail/${productColorId}/${productName}`}>
       <article className={styles.product_card}>
         <figure className={styles.product_card__figure}>
           <img src={images[0]} className={styles.product_card__image}></img>

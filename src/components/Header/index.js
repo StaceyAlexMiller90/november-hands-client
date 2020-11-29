@@ -16,7 +16,7 @@ const Header = () => {
       <Link href="/">
         <img className={styles.header__logo} src="/Logo.png" alt="November Hands Logo"></img>
       </Link>
-      <Navigation menuOpen={menuOpen} />
+      <Navigation menuOpen={menuOpen} toggleMenu={toggleMenu} />
       <Hamburger menuOpen={menuOpen} toggleMenu={toggleMenu} />
     </header>
   )

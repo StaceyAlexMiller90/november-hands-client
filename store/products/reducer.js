@@ -1,11 +1,21 @@
-const initialState = []
+const initialState = {
+  productCount: 0,
+  products: []
+}
 
 export default (state = initialState, action) => {
   switch (action.type) {
     case 'ALL_PRODUCTS_FETCHED_SUCCESS':
-      return action.payload
+      return {
+        ...state,
+        productCount: action.payload.productCount,
+        products: action.payload.products
+      }
     case 'MORE_PRODUCTS_FETCHED_SUCCESS':
-      return [...state, ...action.payload]
+      return {
+        ...state,
+        products: [...state.products, ...action.payload]
+      }
     default:
       return state
   }

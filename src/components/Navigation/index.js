@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { fetchDropdownOptions } from '../../../store/dropdown/actions'
-import { selectDropdownOptions } from '../../../store/dropdown/selector'
+import React, { useState } from 'react'
+import { useQuery } from "@apollo/client";
+import { GET_ALL_CATEGORIES } from '../../graphQL/categories'
+import { GET_ALL_COLLECTIONS } from '../../graphQL/collections'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { FiShoppingCart } from 'react-icons/fi'
@@ -9,8 +9,9 @@ import Dropdown from '../Dropdown'
 import styles from '../Navigation/Navigation.module.scss'
 
 const Navigation = ({ menuOpen, toggleMenu }) => {
-  const dispatch = useDispatch()
-  const { categories, collections } = useSelector(selectDropdownOptions)
+  const categories = useQuery(GET_ALL_CATEGORIES);
+  const collections = useQuery(GET_ALL_COLLECTIONS);
+
   const router = useRouter()
   const [collectionSubMenu, setCollectionSubMenu] = useState(false)
   const [productSubMenu, setProductSubMenu] = useState(false)
@@ -19,9 +20,9 @@ const Navigation = ({ menuOpen, toggleMenu }) => {
     toggleMenu()
   }
 
-  useEffect(() => {
-    dispatch(fetchDropdownOptions())
-  }, [])
+  if(categories.loading || collections.loading) return <p>...Loading</p>
+
+  if(categories.error || collections.error) return <p>Error!</p> 
 
   return (
     <nav className={styles.nav}>
@@ -31,14 +32,14 @@ const Navigation = ({ menuOpen, toggleMenu }) => {
           onMouseOver={() => setCollectionSubMenu(true)}
           onMouseLeave={() => setCollectionSubMenu(false)}>
           Collections
-          {collectionSubMenu && <Dropdown name={'collections'} dataTable={'collection'} options={collections} />}
+          {collectionSubMenu && <Dropdown name={'collections'} dataTable={'collection'} options={collections.data.collections} />}
         </li>
         <li
           className={`${styles.nav__link} ${styles.nav__link_primary} ${productSubMenu && styles.nav__link_active}`}
           onMouseOver={() => setProductSubMenu(true)}
           onMouseLeave={() => setProductSubMenu(false)}>
           Products
-          {productSubMenu && <Dropdown name={'products'} dataTable={'category'} options={categories} />}
+          {productSubMenu && <Dropdown name={'products'} dataTable={'category'} options={categories.data.categories} />}
         </li>
         <li onTouchStart={executeToggle}>
           <Link href="/about">
@@ -79,3 +80,4 @@ const Navigation = ({ menuOpen, toggleMenu }) => {
 }
 
 export default Navigation
+

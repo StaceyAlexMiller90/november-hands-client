@@ -1,8 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
+import { initialiseApollo } from '../lib/apolloClient'
+import { GET_ALL_CATEGORIES } from '../graphQL/categories'
+import { GET_ALL_COLLECTIONS } from '../graphQL/collections'
+import { GET_ALL_OPTIONS } from '../graphQL/options'
 import Head from 'next/head'
 import styles from './homePage.module.scss'
 
 const HomePage = () => {
+
   return (
     <div>
       <Head>
@@ -34,3 +39,26 @@ const HomePage = () => {
 }
 
 export default HomePage
+
+export const getStaticProps = async () => {
+  const apolloClient = initialiseApollo();
+
+  await apolloClient.query({
+    query: GET_ALL_CATEGORIES,
+  })
+
+  await apolloClient.query({
+    query: GET_ALL_COLLECTIONS,
+  })
+
+  await apolloClient.query({
+    query: GET_ALL_OPTIONS,
+  })
+
+  return {
+    props: {
+      initialApolloState: apolloClient.cache.extract(),
+    },
+  };
+}
+

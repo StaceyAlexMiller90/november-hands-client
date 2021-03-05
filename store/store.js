@@ -14,11 +14,11 @@ const bindMiddleware = (middleware) => {
 
 const combinedReducer = combineReducers({
   products,
-  dropdown
+  dropdown 
 })
 
 const reducer = (state, action) => {
-  if (action.type === HYDRATE) {
+  if (action.type === HYDRATE) { 
     const nextState = {
       ...state, // use previous state
       ...action.payload // apply delta from hydration
